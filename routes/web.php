@@ -45,6 +45,11 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/admin/petugas/{id}',[PetugasController::class,'destroy']);
         Route::get('/admin/petugas/{id}',[PetugasController::class,'edit']);
         Route::put('/admin/petugas/{id}',[PetugasController::class,'update']);
+
+        Route::post('/admin/siswa', [SiswaController::class,'store']);
+        Route::delete('/admin/siswa/{id}',[SiswaController::class,'destroy']);
+        Route::get('/admin/siswa/{id}',[SiswaController::class,'edit']);
+        Route::put('/admin/siswa/{id}',[SiswaController::class,'update']);
     });
 
     Route::group(['middleware' => ['cekUser:gurubk']], function () {
@@ -58,5 +63,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/guru/pelanggaran/{id}',[PelanggaranController::class,'edit']);
         Route::put('/guru/pelanggaran/{id}',[PelanggaranController::class,'update']);
         Route::get('/guru/pelanggaran-pdf',[PelanggaranController::class,'view_pdf']);
+
+        Route::post('/guru/tanggapan', [TanggapanController::class,'store']);
+        Route::delete('/guru/tanggapan/{id}',[TanggapanController::class,'destroy']);
+        Route::get('/guru/tanggapan/{id}',[TanggapanController::class,'edit']);
+        Route::put('/guru/tanggapan/{id}',[TanggapanController::class,'update']);
+
     });
 });

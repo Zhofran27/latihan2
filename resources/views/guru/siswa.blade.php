@@ -9,7 +9,6 @@
 
 <body>
 	 @include('layouts.headguru')
-	 {{-- @include('sweetalert::alert') --}}
 	<div class="container">
 		<h3 class="mt-4">Data Siswa
 		</h3>
@@ -32,7 +31,7 @@
 						<td>{{$dt->nis}}</td>
 						<td>{{$dt->nama}}</td>
 						<td>{{$dt->kelas}}</td>
-					</tr> 
+					</tr>  
                     @endforeach 
 			</tbody>
 		</table>
@@ -40,4 +39,5 @@
 	<div class="d-flex justify-content-right"> {{!! $dt->links() !!}} </div> --}} @else
 	<p>Tidak ada Data</p> 
 	@endif 
+
 	@include('layouts.footer')
